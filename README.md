@@ -1,0 +1,78 @@
+## Motivation
+
+blueprint to implement a multi commands in python. This command can be install
+on remote system or CI with pip
+
+* execute operation in CI
+* execute command for user
+* install a new command on OS
+* ...
+
+## Getting started
+
+1. clone this repository
+
+2. remove .git directory
+
+3. use your library identifier as module name
+
+    * replace `mycommand`, `mycommand_tests` by your own identifier
+    * you have to change as well inside `Makefile`, `.coveragerc` and `setup.py`
+
+## The latest version
+
+You can find the latest version to ...
+
+```bash
+git clone https://github.com/FabienArcellier/blueprint-cli-multicommands-python.git
+```
+
+## Usage
+
+You can run the application with the following command
+
+```bash
+python -m mycommand.cli command1 --name fabien
+
+# inside a virtualenv or after installation with pip
+mycommand commad1 --name fabien
+```
+
+## Developper guideline
+
+### Install development environment
+
+Use make to instanciate a python virtual environment in ./venv and install the
+python dependencies.
+
+```bash
+make install_requirements_dev
+```
+
+### Activate the python environment
+
+When you setup the requirements, a `venv` directory on python 3 is created.
+To activate the venv, you have to execute :
+
+```bash
+make venv
+source venv/bin/activate
+```
+
+### Run the linter and the unit tests
+
+Before commit or send a pull request, you have to execute `pylint` to check the syntax
+of your code and run the unit tests to validate the behavior.
+
+```bash
+make lint
+make tests
+```
+
+## Contributors
+
+* Fabien Arcellier
+
+## License
+
+A short snippet describing the license (MIT, Apache, etc.)
