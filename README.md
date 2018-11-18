@@ -1,4 +1,6 @@
-## Motivation
+## blueprint-cli-multicommands-python
+
+[![Build Status](https://travis-ci.org/FabienArcellier/blueprint-cli-multicommands-python.svg?branch=master)](https://travis-ci.org/FabienArcellier/blueprint-cli-multicommands-python)
 
 blueprint to implement a multi commands in python. This command can be install
 on remote system or CI with pip
@@ -7,6 +9,7 @@ on remote system or CI with pip
 * execute command for user
 * install a new command on OS
 * ...
+* implementation compatible with python2.7 and python3.6
 
 ## Getting started
 
@@ -17,7 +20,7 @@ on remote system or CI with pip
 3. use your library identifier as module name
 
     * replace `mycommand`, `mycommand_tests` by your own identifier
-    * you have to change as well inside `Makefile`, `.coveragerc` and `setup.py`
+    * you have to change as well inside `Makefile`, `.coveragerc`, `tox.ini` and `setup.py`
 
 ## The latest version
 
