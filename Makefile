@@ -22,6 +22,10 @@ tests_units: ## run only unit tests
 tests_acceptances: ## run only acceptance tests
 	. venv/bin/activate; python -u -m unittest discover "$(TEST_MODULE)/acceptances"
 
+.PHONY: tox
+tox: ## run tests described in tox.ini on multiple python environments
+	. venv/bin/activate; tox
+
 .PHONY: lint
 lint: ## run pylint
 	. venv/bin/activate; pylint --rcfile=.pylintrc $(APPLICATION_MODULE)
@@ -45,13 +49,17 @@ clean : ## remove all transient directories and files
 	rm -f MANIFEST
 	find -name __pycache__ -print0 | xargs -0 rm -rf
 
-.PHONY: freeze
-freeze: ## freeze the dependencies version in requirements.txt for information
-	. venv/bin/activate; pip freeze | @grep -v "$(APPLICATION_MODULE)" > requirements.txt
+.PHONY: update_requirements
+update_requirements: ## update the project dependencies based on setup.py declaration
+	rm -rf venv
+	virtualenv venv -p python3
+	. venv/bin/activate; pip install .
+	. venv/bin/activate; pip freeze | grep -v "$(APPLICATION_MODULE)" > requirements.txt
 
 .PHONY: install_requirements_dev
 install_requirements_dev: venv ## install pip requirements for development
-	. venv/bin/activate; pip install -r requirements_dev.txt
+	. venv/bin/activate; pip install -r requirements.txt
+	. venv/bin/activate; pip install -e.[dev]
 
 .PHONY: venv
 venv: ## build a virtual env for python 3 in ./venv

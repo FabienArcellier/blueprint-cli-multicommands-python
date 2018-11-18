@@ -35,7 +35,7 @@ You can run the application with the following command
 python -m mycommand.cli command1 --name fabien
 
 # inside a virtualenv or after installation with pip
-mycommand commad1 --name fabien
+mycommand command1 --name fabien
 ```
 
 ## Developper guideline
@@ -47,6 +47,15 @@ python dependencies.
 
 ```bash
 make install_requirements_dev
+```
+
+### Update release dependencies
+
+Use make to instanciate a python virtual environment in ./venv and freeze
+dependencies version on requirement.txt.
+
+```bash
+make update_requirements
 ```
 
 ### Activate the python environment
