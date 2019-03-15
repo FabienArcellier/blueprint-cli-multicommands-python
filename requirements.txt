@@ -1,1 +1,2 @@
 Click==7.0
+decorator==4.3.2

@@ -16,7 +16,8 @@ setup(
         ],
     },
     install_requires = [
-        'click'
+        'click',
+        'decorator'
     ],
     extras_require={
         'dev': [
