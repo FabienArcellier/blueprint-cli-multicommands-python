@@ -1,12 +1,11 @@
 language: python
 
 python:
-  - "3.6"
+    - "2.7"
+    - "3.6"
 
 install:
-  - make venv
-  - make install_requirements_dev
+    - pip install tox-travis
 
 script:
-  - make lint
-  - make tox
+    - tox
