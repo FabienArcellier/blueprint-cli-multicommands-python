@@ -28,7 +28,7 @@ tox: ## run tests described in tox.ini on multiple python environments
 
 .PHONY: lint
 lint: ## run pylint
-	. venv/bin/activate; pylint --rcfile=.rcfile $(APPLICATION_MODULE)
+	. venv/bin/activate; pylint --rcfile=.pylintrc $(APPLICATION_MODULE)
 
 .PHONY: coverage
 coverage: coverage_run coverage_html ## output the code coverage in htmlcov/index.html
