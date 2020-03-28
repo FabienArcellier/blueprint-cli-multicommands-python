@@ -44,6 +44,14 @@ mycommand command1 --name fabien
 
 ## Developper guideline
 
+### Add a dependency
+
+Write the dependency in ``setup.py``. As it's the distribution standard for pypi,
+I prefer to keep ``setup.py`` as single source of truth.
+
+I encourage avoiding using instruction as ``pipenv install requests`` to register
+a new library. You would have to write your dependency in both ``setup.py`` and ``Pipfile``.
+
 ### Install development environment
 
 Use make to instanciate a python virtual environment in ./venv and install the
