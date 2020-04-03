@@ -28,6 +28,7 @@ clean : ## remove all transient directories and files
 	rm -rf *.egg-info
 	rm -f MANIFEST
 	find -name __pycache__ -print0 | xargs -0 rm -rf
+	pipenv --rm
 
 .PHONY: dist
 dist:
