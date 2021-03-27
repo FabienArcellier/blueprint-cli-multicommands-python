@@ -1,6 +1,6 @@
 ## blueprint-cli-multicommands-python
 
-[![Build Status](https://travis-ci.org/FabienArcellier/blueprint-cli-multicommands-python.svg?branch=master)](https://travis-ci.org/FabienArcellier/blueprint-cli-multicommands-python)
+[![ci](https://github.com/FabienArcellier/blueprint-cli-multicommands-python/actions/workflows/main.yml/badge.svg)](https://github.com/FabienArcellier/blueprint-cli-multicommands-python/actions/workflows/main.yml)
 
 blueprint to implement a multi commands in python. This command can be install
 on remote system or CI with pip
@@ -21,7 +21,7 @@ The implementation is compatible with python2.7 and python3.6
 3. use your library identifier as module name
 
     * replace `mycommand`, `mycommand_tests` by your own identifier
-    * you have to change as well inside `Makefile`, `.coveragerc`, `tox.ini` and `setup.py`
+    * you have to change as well inside `Makefile`, `.coveragerc` and `setup.py`
 
 ## The latest version
 
@@ -67,7 +67,7 @@ Use make to instanciate a python virtual environment in ./venv and freeze
 dependencies version on requirement.txt.
 
 ```bash
-make update_requirements
+make freeze_requirements
 ```
 
 ### Activate the python environment
@@ -76,18 +76,16 @@ When you setup the requirements, a `venv` directory on python 3 is created.
 To activate the venv, you have to execute :
 
 ```bash
-make venv
-source venv/bin/activate
+make activate
 ```
 
-### Run the linter and the unit tests
+### Run the continuous integration process
 
 Before commit or send a pull request, you have to execute `pylint` to check the syntax
 of your code and run the unit tests to validate the behavior.
 
 ```bash
-make lint
-make tests
+make ci
 ```
 
 ## Contributors
