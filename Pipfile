@@ -4,7 +4,7 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
-mycommand = {editable = true,extras = ["dev"],path = "."}
+mycommand = {editable = true, extras = ["dev"], path = "."}
 
 [packages]
-mycommand = {editable = true,path = "."}
+mycommand = {editable = true, path = "."}

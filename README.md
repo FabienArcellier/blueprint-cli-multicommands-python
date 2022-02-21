@@ -20,8 +20,8 @@ The implementation is compatible with python2.7 and python3.6
 
 3. use your library identifier as module name
 
-    * replace `mycommand`, `mycommand_tests` by your own identifier
-    * you have to change as well inside `Makefile`, `.coveragerc` and `setup.py`
+    * rename `src/mycommand` into your own package name
+    * you have to change as well inside `Makefile`, `.coveragerc` and `setup.cfg`
 
 ## The latest version
 
@@ -46,11 +46,10 @@ mycommand command1 --name fabien
 
 ### Add a dependency
 
-Write the dependency in ``setup.py``. As it's the distribution standard for pypi,
-I prefer to keep ``setup.py`` as single source of truth.
+Write the dependency in ``setup.cfg``. As it's the distribution standard for pypi, I prefer to keep ``setup.cfg`` as single source of truth.
 
 I encourage avoiding using instruction as ``pipenv install requests`` to register
-a new library. You would have to write your dependency in both ``setup.py`` and ``Pipfile``.
+a new library. You would have to write your dependency in both ``setup.cfg`` and ``Pipfile``.
 
 ### Install development environment
 

@@ -5,7 +5,7 @@ import unittest
 import os
 from click.testing import CliRunner
 from mycommand.cli import cli
-from mycommand_tests.acceptances.fixtures import clone_fixture
+from tests.acceptances.fixtures import clone_fixture
 
 
 class MainTest(unittest.TestCase):

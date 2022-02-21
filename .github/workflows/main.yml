@@ -7,7 +7,7 @@ jobs:
         runs-on: ubuntu-latest
         strategy:
             matrix:
-                python-version: [3.6, 3.7, 3.8]
+                python-version: [3.6, 3.7, 3.8, 3.9]
 
         steps:
             -   uses: actions/checkout@v2
@@ -17,9 +17,13 @@ jobs:
                 with:
                     python-version: ${{ matrix.python-version }}
 
+            -   name: Display Python version
+                run: python --version
+
             -   name: update package manager & install python3 environment
                 run: |
                     sudo pip install pipenv
+                    pipenv --python ${{ matrix.python-version }}
                     pipenv install --dev
 
             -   name: lint

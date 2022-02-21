@@ -1,5 +1,5 @@
-APPLICATION_MODULE=mycommand
-TEST_MODULE=$(APPLICATION_MODULE)_tests
+APPLICATION_MODULE=src/mycommand
+TEST_MODULE=tests
 
 .PHONY: activate
 activate: _init_venv ## activate the virtualenv associate with this project
