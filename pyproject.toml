@@ -1,3 +1,38 @@
+[tool.poetry]
+name = "blueprint-cli-multicommands-python"
+version = "1.0.0"
+description = "blueprint to implement a cli multi-commands in python"
+authors = ["Fabien Arcellier <fabien.arcellier@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "mycommand", from = "src"}]
+classifiers = [
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+    "Environment :: Console",
+]
+include = [
+    { path = "*.md" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+click = "^8.1.3"
+
+
+[tool.poetry.group.dev.dependencies]
+coverage = "^7.0.1"
+pylint = "^2.15.9"
+pytest = "^7.2.0"
+
+[tool.poetry.scripts]
+mycommand = ' mycommand.cli:cli'
+
 [build-system]
-requires = ["setuptools", "wheel"]
-build-backend = "setuptools.build_meta:__legacy__"
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
