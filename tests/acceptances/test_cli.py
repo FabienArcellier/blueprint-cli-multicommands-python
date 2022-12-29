@@ -3,10 +3,10 @@
 import unittest
 
 import os
+
+import fixtup
 from click.testing import CliRunner
 from mycommand.cli import cli
-from tests.acceptances.fixtures import clone_fixture
-
 
 class MainTest(unittest.TestCase):
     def setUp(self):
@@ -24,6 +24,7 @@ class MainTest(unittest.TestCase):
         self.assertEqual('hello fabien\n', result.output)
 
     def test_scenario1_contains_file_txt(self):
-        with clone_fixture(fixture_name='scenario1') as wd:
-            file_txt_path = os.path.join(wd, 'file.txt')
+        with fixtup.up('scenario1'):
+            working_dir = os.getcwd()
+            file_txt_path = os.path.join(working_dir, 'file.txt')
             self.assertTrue(os.path.isfile(file_txt_path))

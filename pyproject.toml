@@ -29,6 +29,7 @@ click = "^8.1.3"
 coverage = "^7.0.1"
 pylint = "^2.15.9"
 pytest = "^7.2.0"
+fixtup = "^0.1.4"
 
 [tool.poetry.scripts]
 mycommand = ' mycommand.cli:cli'
@@ -36,3 +37,10 @@ mycommand = ' mycommand.cli:cli'
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tools.fixtup]
+fixtures = "tests/fixtures"
+plugins = [
+    "fixtup.plugins.dotenv",
+    "fixtup.plugins.docker"
+]
